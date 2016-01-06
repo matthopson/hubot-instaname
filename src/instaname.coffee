@@ -60,8 +60,7 @@ module.exports = (robot) ->
       instagram = user.instagram
 
       if instagram?
-        res.reply "#{user.name} is the famous `@#{instagram}` on Instagram.
-        \rCheck 'em out at https://www.instagram.com/#{instagram}/"
+        res.reply "#{user.name} is the famous `@#{instagram}` on Instagram. Check 'em out at https://www.instagram.com/#{instagram}/"
       else
         res.reply "I don't know of any Instagram account for #{user.name}.
         Perhaps you could remind them to set it up?"
