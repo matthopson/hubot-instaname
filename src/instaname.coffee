@@ -8,8 +8,9 @@
 #   None
 #
 # Commands:
-#   hubot set instagram @instagram_user - Sets your user's Instagram name.
-#   hubot who the hell is @user - Returns a chat user's Instagram name.
+#   set instagram <@instagram_user> - Sets your user's Instagram name.
+#   who is <user> - Returns a user's Instagram name.
+#   list instagrams - Return a list of known user Instagrams.
 #
 # Notes:
 #   It's pretty awesome. Try not to weep at its brilliance.
@@ -66,13 +67,13 @@ module.exports = (robot) ->
         Perhaps you could remind them to set it up?"
 
 
-  # Retr all instagram users
+  # Retrieve all instagram users
   robot.respond /list instagrams/i, (res) ->
     instagrams = []
 
     for index, user of robot.brain.data.users
       if user.instagram?
-        instagrams.push "`#{user.name}` is @#{user.instagram} on Instagram."
+        instagrams.push "`#{user.name}` is https://www.instagram.com/#{user.instagram}/"
 
     if instagrams.length > 0
       instagramList = instagrams.join('\n')
